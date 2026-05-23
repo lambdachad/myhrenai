@@ -1,8 +1,10 @@
 <script lang="ts">
     import TechLogos from "$lib/components/TechLogos.svelte";
+    import { enhance } from "$app/forms";
 
-    // State
     let openFaq = $state<string | null>(null);
+    let formState = $state<"idle" | "sending" | "sent" | "error">("idle");
+    let formError = $state("");
 
     function toggleFaq(id: string) {
         openFaq = openFaq === id ? null : id;
@@ -102,7 +104,7 @@
             <div class="hero-ctas desktop-only">
                 <a href="#process" class="btn-outline">How it works →</a>
                 <a
-                    href="https://cal.com"
+                    href="https://cal.com/myhrenai/strategy-call"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn-primary">Book a call</a
@@ -111,7 +113,7 @@
 
             <div class="hero-ctas-mobile mobile-only">
                 <a
-                    href="https://cal.com"
+                    href="https://cal.com/myhrenai/strategy-call"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn-primary hero-btn-mobile">Book a call</a
@@ -275,7 +277,7 @@
                 </p>
             </div>
             <a
-                href="https://cal.com"
+                href="https://cal.com/myhrenai/strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-white">Book a free consultation</a
@@ -337,7 +339,7 @@
         </h2>
         <div class="cta-buttons">
             <a
-                href="https://cal.com"
+                href="https://cal.com/myhrenai/strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-dark cta-btn">Book a 30-minute call</a
@@ -364,7 +366,7 @@
                         >contact@myhren.ai</a
                     >
                     <a
-                        href="https://cal.com"
+                        href="https://cal.com/myhrenai/strategy-call"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="contact-book">Book a call →</a
@@ -373,79 +375,118 @@
             </div>
 
             <div class="contact-form-wrap">
-                <form
-                    class="contact-form"
-                    action="mailto:contact@myhren.ai"
-                    method="post"
-                    enctype="text/plain"
-                >
-                    <div class="name-grid">
+                {#if formState === "sent"}
+                    <div class="form-success">
+                        <p class="form-success-title">Message sent.</p>
+                        <p class="form-success-sub">
+                            We'll get back to you within a few hours.
+                        </p>
+                    </div>
+                {:else}
+                    <form
+                        class="contact-form"
+                        method="POST"
+                        action="?/contact"
+                        use:enhance={() => {
+                            formState = "sending";
+                            return async ({ result }) => {
+                                if (result.type === "success") {
+                                    formState = "sent";
+                                } else if (result.type === "failure") {
+                                    formState = "error";
+                                    formError =
+                                        (result.data as { error?: string })
+                                            ?.error || "Something went wrong.";
+                                } else {
+                                    formState = "error";
+                                    formError =
+                                        "Something went wrong. Please try again.";
+                                }
+                            };
+                        }}
+                    >
+                        <div class="name-grid">
+                            <div class="form-field">
+                                <label for="firstName" class="form-label"
+                                    >First name *</label
+                                >
+                                <input
+                                    id="firstName"
+                                    name="firstName"
+                                    required
+                                    placeholder="Jane"
+                                    class="form-input"
+                                />
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName" class="form-label"
+                                    >Last name *</label
+                                >
+                                <input
+                                    id="lastName"
+                                    name="lastName"
+                                    required
+                                    placeholder="Smith"
+                                    class="form-input"
+                                />
+                            </div>
+                        </div>
+
                         <div class="form-field">
-                            <label for="first-name" class="form-label"
-                                >First name *</label
+                            <label for="email" class="form-label">Email *</label
                             >
                             <input
-                                id="first-name"
-                                name="first-name"
+                                id="email"
+                                name="email"
+                                type="email"
                                 required
-                                placeholder="Jane"
+                                placeholder="jane@company.com"
                                 class="form-input"
                             />
                         </div>
+
                         <div class="form-field">
-                            <label for="last-name" class="form-label"
-                                >Last name *</label
+                            <label for="company" class="form-label"
+                                >Company *</label
                             >
                             <input
-                                id="last-name"
-                                name="last-name"
+                                id="company"
+                                name="company"
                                 required
-                                placeholder="Smith"
+                                placeholder="Your Company Name"
                                 class="form-input"
                             />
                         </div>
-                    </div>
 
-                    <div class="form-field">
-                        <label for="email" class="form-label">Email *</label>
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            placeholder="jane@company.com"
-                            class="form-input"
-                        />
-                    </div>
+                        <div class="form-field">
+                            <label for="message" class="form-label"
+                                >Message</label
+                            >
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Tell us what's slowing your team down..."
+                                class="form-input form-textarea"
+                            ></textarea>
+                        </div>
 
-                    <div class="form-field">
-                        <label for="company" class="form-label">Company *</label
-                        >
-                        <input
-                            id="company"
-                            name="company"
-                            required
-                            placeholder="Your Company Name"
-                            class="form-input"
-                        />
-                    </div>
+                        {#if formState === "error"}
+                            <p class="form-error">{formError}</p>
+                        {/if}
 
-                    <div class="form-field">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Tell us what's slowing your team down..."
-                            class="form-input form-textarea"
-                        ></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn-dark"
-                            >Send message</button
-                        >
-                    </div>
-                </form>
+                        <div class="form-actions">
+                            <button
+                                type="submit"
+                                class="btn-dark"
+                                disabled={formState === "sending"}
+                            >
+                                {formState === "sending"
+                                    ? "Sending..."
+                                    : "Send message"}
+                            </button>
+                        </div>
+                    </form>
+                {/if}
             </div>
         </div>
     </div>
@@ -864,6 +905,35 @@
         display: flex;
         align-items: center;
         gap: 16px;
+    }
+
+    .form-actions button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .form-error {
+        font-size: 14px;
+        color: #d32f2f;
+        margin: 0;
+    }
+
+    .form-success {
+        padding: 48px 0;
+    }
+
+    .form-success-title {
+        font-size: 24px;
+        font-weight: 500;
+        font-family: var(--f-heading);
+        color: var(--c-text);
+        margin: 0 0 8px;
+    }
+
+    .form-success-sub {
+        font-size: 15px;
+        color: var(--c-text-secondary);
+        margin: 0;
     }
 
     @media (max-width: 900px) {

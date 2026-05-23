@@ -13,23 +13,26 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 </svelte:head>
 
 <nav class="nav">
     <div class="nav-inner container">
-        <a href="/" class="nav-logo">MYHREN AI</a>
+        <a href="/" class="nav-logo"
+            ><img src="/logo.png" alt="Myhren AI" class="nav-logo-img" /></a
+        >
 
         <div class="nav-links desktop-only">
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+            <a href="/#services">Services</a>
+            <a href="/#process">Process</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#contact">Contact</a>
         </div>
 
         <div class="nav-cta desktop-only">
             <a
-                href="https://cal.com"
+                href="https://cal.com/myhrenai/strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-nav"
@@ -67,12 +70,12 @@
 
     {#if mobileMenuOpen}
         <div class="mobile-menu mobile-only">
-            <a href="#services" onclick={closeMobileMenu}>Services</a>
-            <a href="#process" onclick={closeMobileMenu}>Process</a>
-            <a href="#faq" onclick={closeMobileMenu}>FAQ</a>
-            <a href="#contact" onclick={closeMobileMenu}>Contact</a>
+            <a href="/#services" onclick={closeMobileMenu}>Services</a>
+            <a href="/#process" onclick={closeMobileMenu}>Process</a>
+            <a href="/#faq" onclick={closeMobileMenu}>FAQ</a>
+            <a href="/#contact" onclick={closeMobileMenu}>Contact</a>
             <a
-                href="https://cal.com"
+                href="https://cal.com/myhrenai/strategy-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-primary"
@@ -90,7 +93,7 @@
     <div class="container">
         <div class="footer-grid footer-top">
             <div class="footer-brand">
-                <span class="footer-logo">MYHREN AI</span>
+                <img src="/logo.png" alt="Myhren AI" class="footer-logo-img" />
                 <p class="footer-tagline">
                     AI systems and automations for businesses. Built to
                     eliminate the work you hate.
@@ -98,7 +101,7 @@
                 <div class="footer-contact-links">
                     <a href="mailto:contact@myhren.ai">contact@myhren.ai</a>
                     <a
-                        href="https://cal.com"
+                        href="https://cal.com/myhrenai/strategy-call"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="footer-book-link">Book a call →</a
@@ -160,12 +163,15 @@
     }
 
     .nav-logo {
-        font-family: var(--f-heading);
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        color: var(--c-text);
+        display: flex;
+        align-items: center;
         text-decoration: none;
+    }
+
+    .nav-logo-img {
+        height: 32px;
+        width: auto;
+        display: block;
     }
 
     .nav-links {
@@ -231,12 +237,11 @@
         grid-column: span 5;
     }
 
-    .footer-logo {
-        font-family: var(--f-heading);
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
+    .footer-logo-img {
+        height: 32px;
+        width: auto;
         display: block;
+        filter: brightness(0) invert(1);
     }
 
     .footer-tagline {
