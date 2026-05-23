@@ -1,12 +1,14 @@
 <script lang="ts">
     import TechLogos from "$lib/components/TechLogos.svelte";
 
+    // State
     let openFaq = $state<string | null>(null);
 
     function toggleFaq(id: string) {
         openFaq = openFaq === id ? null : id;
     }
 
+    // FAQ
     const faqGroups = [
         {
             category: "About Our Services",
@@ -115,7 +117,7 @@
                     class="btn-primary hero-btn-mobile">Book a call</a
                 >
                 <a href="#process" class="btn-outline hero-btn-mobile"
-                    >How it works &rarr;</a
+                    >How it works →</a
                 >
             </div>
         </div>
@@ -128,7 +130,7 @@
     <div class="container">
         <div class="section-header">
             <div class="sh-label">
-                <div class="mono-label">&sect; 01 &mdash; What we build</div>
+                <div class="mono-label">§ 01 - What we build</div>
             </div>
             <h2 class="sh-title">
                 One system for every task your team shouldn't be doing manually.
@@ -218,7 +220,7 @@
     <div class="container">
         <div class="section-header section-header-dark">
             <div class="sh-label">
-                <div class="mono-label">&sect; 02 &mdash; How we work</div>
+                <div class="mono-label">§ 02 - How we work</div>
             </div>
             <h2 class="sh-title sh-title-white">
                 We don't sell software. We eliminate the work you hate.
@@ -269,7 +271,7 @@
                     Ready to find the bottleneck hiding in your operations?
                 </p>
                 <p class="process-cta-sub">
-                    No obligation &middot; 30-minute strategy call
+                    No obligation · 30-minute strategy call
                 </p>
             </div>
             <a
@@ -286,7 +288,7 @@
     <div class="container">
         <div class="faq-grid">
             <div class="faq-sidebar">
-                <div class="mono-label">&sect; 03 &mdash; FAQ</div>
+                <div class="mono-label">§ 03 - FAQ</div>
                 <h2 class="faq-title">Questions we get asked.</h2>
                 <p class="faq-sub">
                     Still have questions? <a href="#contact" class="faq-link"
@@ -300,7 +302,7 @@
                     <div class="faq-group">
                         <div class="faq-category">{group.category}</div>
                         {#each group.items as item}
-						<div class="faq-item">
+                            <div class="faq-item">
                                 <button
                                     class="faq-question"
                                     onclick={() => toggleFaq(item.id)}
@@ -351,7 +353,7 @@
     <div class="container">
         <div class="contact-grid">
             <div class="contact-sidebar">
-                <div class="mono-label">&sect; 04 &mdash; Get in touch</div>
+                <div class="mono-label">§ 04 - Get in touch</div>
                 <h2 class="contact-title">Let's talk about your business.</h2>
                 <p class="contact-sub">
                     Send us a message or book a call directly. We typically
@@ -529,12 +531,12 @@
         align-items: center;
     }
 
-	.sh-title {
-		font-size: clamp(28px, 4vw, 44px);
-		line-height: 1.05;
-		margin: 0;
-		color: var(--c-text);
-	}
+    .sh-title {
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.05;
+        margin: 0;
+        color: var(--c-text);
+    }
 
     .sh-title-white {
         color: var(--c-white);
@@ -556,12 +558,12 @@
         letter-spacing: 0.5px;
     }
 
-	.service-title {
-		font-size: 22px;
-		letter-spacing: -0.01em;
-		margin: 0 0 10px;
-		color: var(--c-text);
-	}
+    .service-title {
+        font-size: 22px;
+        letter-spacing: -0.01em;
+        margin: 0 0 10px;
+        color: var(--c-text);
+    }
 
     .service-desc {
         font-size: 14px;
@@ -582,14 +584,14 @@
         border-right: none;
     }
 
-	.stat-number {
-		font-size: 36px;
-		font-weight: 500;
-		font-family: var(--f-heading);
-		letter-spacing: -0.02em;
-		color: var(--c-accent);
-		line-height: 1;
-	}
+    .stat-number {
+        font-size: 36px;
+        font-weight: 500;
+        font-family: var(--f-heading);
+        letter-spacing: -0.02em;
+        color: var(--c-accent);
+        line-height: 1;
+    }
 
     .stat-label {
         font-family: var(--f-mono);
@@ -616,12 +618,12 @@
         margin-bottom: 40px;
     }
 
-	.process-title {
-		font-size: 26px;
-		letter-spacing: -0.01em;
-		margin: 0 0 14px;
-		color: var(--c-white);
-	}
+    .process-title {
+        font-size: 26px;
+        letter-spacing: -0.01em;
+        margin: 0 0 14px;
+        color: var(--c-white);
+    }
 
     .process-desc {
         font-size: 14px;
@@ -659,16 +661,16 @@
         letter-spacing: 0.5px;
     }
 
-	.faq-sidebar {
+    .faq-sidebar {
         grid-column: span 4;
     }
 
-	.faq-title {
-		font-size: clamp(28px, 3vw, 40px);
-		line-height: 1.05;
-		margin: 16px 0 0;
-		color: var(--c-text);
-	}
+    .faq-title {
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.05;
+        margin: 16px 0 0;
+        color: var(--c-text);
+    }
 
     .faq-sub {
         font-size: 14px;
@@ -771,12 +773,12 @@
         grid-column: span 4;
     }
 
-	.contact-title {
-		font-size: clamp(28px, 3vw, 40px);
-		line-height: 1.05;
-		margin: 16px 0 0;
-		color: var(--c-text);
-	}
+    .contact-title {
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.05;
+        margin: 16px 0 0;
+        color: var(--c-text);
+    }
 
     .contact-sub {
         font-size: 15px;
@@ -864,12 +866,12 @@
         gap: 16px;
     }
 
-	@media (max-width: 900px) {
-		.faq-sidebar,
-		.faq-content,
-		.contact-sidebar,
-		.contact-form-wrap {
-			grid-column: 1;
-		}
-	}
+    @media (max-width: 900px) {
+        .faq-sidebar,
+        .faq-content,
+        .contact-sidebar,
+        .contact-form-wrap {
+            grid-column: 1;
+        }
+    }
 </style>

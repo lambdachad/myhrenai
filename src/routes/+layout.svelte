@@ -1,10 +1,12 @@
 <script lang="ts">
-    import "$lib/styles/global.css";
     import "unfonts.css";
+    import "$lib/styles/global.css";
 
+    // Props
     let { children } = $props();
-    let mobileMenuOpen = $state(false);
 
+    // State
+    let mobileMenuOpen = $state(false);
     function closeMobileMenu() {
         mobileMenuOpen = false;
     }
@@ -133,7 +135,7 @@
         </div>
 
         <div class="footer-bottom">
-            <span>&copy; 2026 MYHREN AI &middot; Org.nr 932 149 893</span>
+            <span>© 2026 MYHREN AI · Org.nr 932 149 893</span>
             <span>NORWAY</span>
         </div>
     </div>
@@ -307,8 +309,8 @@
         color: rgba(255, 255, 255, 0.4);
     }
 
-	@media (max-width: 900px) {
-		.footer-brand {
+    @media (max-width: 900px) {
+        .footer-brand {
             grid-column: 1 / -1;
         }
 
@@ -317,7 +319,7 @@
         }
     }
 
-	@media (max-width: 600px) {
+    @media (max-width: 600px) {
         .footer-col {
             grid-column: 1 / -1;
         }
