@@ -3,11 +3,9 @@ import { Resend } from "resend";
 import { env } from "$env/dynamic/private";
 import type { Actions } from "./$types";
 
-// Resend client
-const resend = new Resend(env.RESEND_API_KEY);
-
 export const actions = {
     contact: async ({ request }) => {
+        const resend = new Resend(env.RESEND_API_KEY);
         // Get form data and check if valid
         const formData = await request.formData();
         const { firstName, lastName, email, company, message } =
