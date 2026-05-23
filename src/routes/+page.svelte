@@ -1,5 +1,6 @@
 <script lang="ts">
-	// FAQ accordion state
+	import TechLogos from '$lib/components/TechLogos.svelte';
+
 	let openFaq = $state<string | null>(null);
 
 	function toggleFaq(id: string) {
@@ -18,12 +19,12 @@
 				{
 					id: 'svc-2',
 					q: 'What tools do you work with?',
-					a: 'We\'re tool-agnostic. n8n, Make, custom APIs, OpenAI, Claude, Slack, HubSpot, Google Workspace, ERP systems — whatever your stack needs. If it has an API, we can connect it.'
+					a: "We're tool-agnostic. n8n, Make, custom APIs, OpenAI, Claude, Slack, HubSpot, Google Workspace, ERP systems. Whatever your stack needs. If it has an API, we can connect it."
 				},
 				{
 					id: 'svc-3',
 					q: 'Do I need to be technical?',
-					a: 'No. We handle everything. You tell us what\'s slowing you down, and we build the solution. You don\'t need to understand APIs, code, or AI models.'
+					a: "No. We handle everything. You tell us what's slowing you down, and we build the solution. You don't need to understand APIs, code, or AI models."
 				}
 			]
 		},
@@ -37,13 +38,13 @@
 				},
 				{
 					id: 'price-2',
-					q: 'What\'s the ROI compared to hiring?',
-					a: 'Most clients see 5-10x return within the first 3 months. An automation that saves 20 hours per week at $50/hr is saving you $4,000/month. Every month. Forever. And it doesn\'t call in sick.'
+					q: "What's the ROI compared to hiring?",
+					a: "Most clients see 5-10x return within the first 3 months. An automation that saves 20 hours per week at $50/hr is saving you $4,000/month. Every month. Forever. And it doesn't call in sick."
 				},
 				{
 					id: 'price-3',
 					q: 'Do I own what you build?',
-					a: 'Yes. 100%. No vendor lock-in. Every system, every workflow, every integration we build — you own it completely. If you want to part ways, you keep everything.'
+					a: 'Yes. 100%. No vendor lock-in. Every system, every workflow, every integration we build, you own it completely. If you want to part ways, you keep everything.'
 				}
 			]
 		},
@@ -53,29 +54,28 @@
 				{
 					id: 'impl-1',
 					q: 'How long does it take?',
-					a: 'Most automations are live within 1-3 weeks. Complex AI systems take 4-8 weeks. We give you a clear timeline before we start, and we stick to it.'
+					a: 'Most automations are live within 1-2 weeks. Complex AI systems take 3-6 weeks. We give you a clear timeline before we start, and we stick to it.'
 				},
 				{
 					id: 'impl-2',
 					q: 'What do you need from us to get started?',
-					a: 'A 30-minute call to understand your workflows and pain points. That\'s it. We handle the rest — from system access to building, testing, and deploying.'
+					a: "A 30-minute call to understand your workflows and pain points. That's it. We handle the rest: system access, building, testing, and deploying."
 				},
 				{
 					id: 'impl-3',
 					q: 'What if something breaks?',
-					a: 'We offer ongoing support and monitoring. If something breaks, we fix it. That\'s the deal. You don\'t need an in-house team to maintain what we build.'
+					a: "We offer ongoing support and monitoring. If something breaks, we fix it. That's the deal. You don't need an in-house team to maintain what we build."
 				}
 			]
 		}
 	];
 </script>
 
-<!-- ===== HERO ===== -->
 <section class="section-hero">
 	<div class="container">
 		<div class="hero-tag">
 			<span class="hero-dot"></span>
-			<span class="mono-label">AI & automation agency &middot; est. 2024</span>
+			<span class="mono-label">AI & automation agency</span>
 		</div>
 
 		<h1 class="hero-h1">
@@ -86,7 +86,7 @@
 		<div class="hero-body">
 			<div class="hero-desc">
 				<p class="hero-p">
-					We build AI systems and automations that eliminate manual busywork — so your team stops wasting time on tasks that don't grow the business.
+					We build AI systems and automations that eliminate manual busywork so your team stops wasting time on tasks that don't grow the business.
 				</p>
 			</div>
 
@@ -108,23 +108,8 @@
 	</div>
 </section>
 
-<!-- ===== PAIN POINTS STRIP ===== -->
-<section class="pain-strip">
-	<div class="container">
-		<div class="pain-strip-inner">
-			<div class="mono-label-sm pain-label">Sound familiar?</div>
-			<div class="pain-items">
-				<span class="pain-item">"We're paying skilled people to copy-paste data between systems."</span>
-				<span class="pain-divider">&middot;</span>
-				<span class="pain-item">"Leads slip through the cracks because nobody followed up fast enough."</span>
-				<span class="pain-divider">&middot;</span>
-				<span class="pain-item">"We know AI could help, but we don't have time to figure out how."</span>
-			</div>
-		</div>
-	</div>
-</section>
+<TechLogos />
 
-<!-- ===== SERVICES ===== -->
 <section id="services" class="section">
 	<div class="container">
 		<div class="section-header">
@@ -150,7 +135,7 @@
 					<div class="service-num">02</div>
 					<div class="service-content">
 						<h3 class="service-title">AI Agents</h3>
-						<p class="service-desc">Custom AI that handles customer inquiries, qualifies leads, processes documents, and routes tasks — 24/7, without breaks or bad days.</p>
+						<p class="service-desc">Custom AI that handles customer inquiries, qualifies leads, processes documents, and routes tasks. 24/7, without breaks or bad days.</p>
 					</div>
 				</div>
 			</div>
@@ -182,7 +167,7 @@
 				<div class="stat-label">Always running</div>
 			</div>
 			<div class="stat-cell">
-				<div class="stat-number">&lt; 3 wk</div>
+				<div class="stat-number">&lt; 2 wk</div>
 				<div class="stat-label">Average delivery</div>
 			</div>
 			<div class="stat-cell">
@@ -197,7 +182,6 @@
 	</div>
 </section>
 
-<!-- ===== PROCESS (DARK) ===== -->
 <section id="process" class="section-dark">
 	<div class="container">
 		<div class="section-header section-header-dark">
@@ -228,7 +212,7 @@
 				<div class="process-card">
 					<div class="process-num">03</div>
 					<h3 class="process-title">Deploy & Optimize</h3>
-					<p class="process-desc">We launch, monitor, and improve your systems over time. When something breaks at 2 AM, we fix it — not you. Ongoing support included.</p>
+					<p class="process-desc">We launch, monitor, and improve your systems over time. When something breaks at 2 AM, we fix it, not you. Ongoing support included.</p>
 				</div>
 			</div>
 		</div>
@@ -243,7 +227,6 @@
 	</div>
 </section>
 
-<!-- ===== FAQ ===== -->
 <section id="faq" class="section">
 	<div class="container">
 		<div class="faq-grid">
@@ -265,7 +248,7 @@
 									aria-expanded={openFaq === item.id}
 								>
 									<span>{item.q}</span>
-									<span class="faq-toggle">{openFaq === item.id ? '−' : '+'}</span>
+									<span class="faq-toggle">{openFaq === item.id ? '\u2212' : '+'}</span>
 								</button>
 								{#if openFaq === item.id}
 									<div class="faq-answer">
@@ -281,7 +264,6 @@
 	</div>
 </section>
 
-<!-- ===== FINAL CTA (BLUE) ===== -->
 <section class="section-cta">
 	<div class="container">
 		<h2 class="cta-h2">
@@ -295,7 +277,6 @@
 	</div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section id="contact" class="section">
 	<div class="container">
 		<div class="contact-grid">
@@ -347,7 +328,6 @@
 </section>
 
 <style>
-	/* ===== HERO ===== */
 	.hero-tag {
 		display: flex;
 		align-items: flex-start;
@@ -422,40 +402,6 @@
 		padding: 14px 22px;
 	}
 
-	/* ===== PAIN STRIP ===== */
-	.pain-strip {
-		border-bottom: 1px solid var(--c-border-light);
-		padding: 28px 0;
-	}
-
-	.pain-strip-inner {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-		flex-wrap: wrap;
-	}
-
-	.pain-label {
-		margin-right: 12px;
-		white-space: nowrap;
-	}
-
-	.pain-items {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-		flex-wrap: wrap;
-		flex: 1;
-		font-size: 13px;
-		color: var(--c-text-secondary);
-		font-style: italic;
-	}
-
-	.pain-divider {
-		color: var(--c-text-faint);
-	}
-
-	/* ===== SERVICES ===== */
 	.sh-label {
 		display: flex;
 		align-items: center;
@@ -537,8 +483,7 @@
 		letter-spacing: 0.5px;
 	}
 
-	/* ===== PROCESS ===== */
-	.section-header-dark .mono-label {
+	.section-header-dark :global(.mono-label) {
 		color: var(--c-text-muted);
 	}
 
@@ -610,7 +555,6 @@
 		white-space: nowrap;
 	}
 
-	/* ===== FAQ ===== */
 	.faq-sidebar {
 		grid-column: span 4;
 	}
@@ -692,7 +636,6 @@
 		margin: 0;
 	}
 
-	/* ===== FINAL CTA ===== */
 	.cta-h2 {
 		font-size: clamp(44px, 7vw, 90px);
 		line-height: 0.96;
@@ -723,7 +666,6 @@
 		font-size: 15px;
 	}
 
-	/* ===== CONTACT ===== */
 	.contact-sidebar {
 		grid-column: span 4;
 	}
@@ -824,7 +766,6 @@
 		gap: 16px;
 	}
 
-	/* ===== RESPONSIVE ===== */
 	@media (max-width: 900px) {
 		.faq-sidebar {
 			grid-column: 1;
@@ -850,17 +791,6 @@
 	@media (min-width: 901px) {
 		.mobile-only {
 			display: none !important;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.pain-items {
-			flex-direction: column;
-			gap: 8px;
-		}
-
-		.pain-divider {
-			display: none;
 		}
 	}
 </style>
