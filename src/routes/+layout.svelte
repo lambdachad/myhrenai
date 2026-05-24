@@ -22,7 +22,12 @@
 <nav class="nav">
     <div class="nav-inner container">
         <a href="/" class="nav-logo"
-            ><enhanced:img src="$lib/assets/logo.png" alt="Myhren AI" class="nav-logo-img" /></a
+            ><enhanced:img
+                src="$lib/assets/logo.png"
+                alt="Myhren AI"
+                class="nav-logo-img"
+                width="266"
+            /></a
         >
 
         <div class="nav-links desktop-only">
@@ -97,7 +102,12 @@
     <div class="container">
         <div class="footer-grid footer-top">
             <div class="footer-brand">
-                <enhanced:img src="$lib/assets/logo.png" alt="Myhren AI" class="footer-logo-img" />
+                <enhanced:img
+                    src="$lib/assets/logo.png"
+                    alt="Myhren AI"
+                    class="footer-logo-img"
+                    width="266"
+                />
                 <p class="footer-tagline">
                     AI systems and automations for businesses. Built to
                     eliminate the work you hate.
