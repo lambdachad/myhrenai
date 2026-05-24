@@ -19,7 +19,7 @@
     <meta name="robots" content="index, follow" />
     <script
         defer
-        src="https://myhren.ai/script.js"
+        src="https://umami.myhren.ai/script.js"
         data-website-id="18674c6c-e377-4282-a453-e62b16cb1170"
     ></script>
 </svelte:head>
