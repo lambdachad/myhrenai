@@ -15,6 +15,10 @@
 <svelte:head>
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#217ff1" />
+    <meta property="og:site_name" content="Myhren AI" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="robots" content="index, follow" />
 </svelte:head>
 
 <nav class="nav">
@@ -131,8 +135,8 @@
             <div class="footer-col">
                 <div class="footer-col-title">Legal</div>
                 <ul>
-                    <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -223,6 +227,7 @@
     }
 
     .mobile-menu :global(.btn-primary) {
+        color: var(--c-white);
         justify-content: center;
         text-align: center;
         margin-top: 4px;

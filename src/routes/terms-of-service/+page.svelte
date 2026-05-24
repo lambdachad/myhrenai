@@ -4,6 +4,24 @@
         name="description"
         content="Terms of Service for Myhren AI. Terms and conditions governing use of our website and services."
     />
+    <link rel="canonical" href="https://myhren.ai/terms-of-service" />
+
+    <meta property="og:title" content="Terms of Service | Myhren AI" />
+    <meta
+        property="og:description"
+        content="Terms of Service for Myhren AI. Terms and conditions governing use of our website and services."
+    />
+    <meta property="og:url" content="https://myhren.ai/terms-of-service" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Myhren AI" />
+    <meta property="og:image" content="https://myhren.ai/og-image.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Terms of Service | Myhren AI" />
+    <meta
+        name="twitter:description"
+        content="Terms of Service for Myhren AI. Terms and conditions governing use of our website and services."
+    />
 </svelte:head>
 
 <section class="legal-page">
@@ -95,7 +113,7 @@
                     communicate with us via email, you confirm that the
                     information you provide is accurate and that you have the
                     authority to share it. We will use this information as
-                    described in our <a href="/privacy">Privacy Policy</a>.
+                    described in our <a href="/privacy-policy">Privacy Policy</a>.
                 </p>
             </div>
 

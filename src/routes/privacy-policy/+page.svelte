@@ -4,6 +4,24 @@
         name="description"
         content="Privacy Policy for Myhren AI. How we collect, use, and protect your personal information."
     />
+    <link rel="canonical" href="https://myhren.ai/privacy-policy" />
+
+    <meta property="og:title" content="Privacy Policy | Myhren AI" />
+    <meta
+        property="og:description"
+        content="Privacy Policy for Myhren AI. How we collect, use, and protect your personal information."
+    />
+    <meta property="og:url" content="https://myhren.ai/privacy-policy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Myhren AI" />
+    <meta property="og:image" content="https://myhren.ai/og-image.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Privacy Policy | Myhren AI" />
+    <meta
+        name="twitter:description"
+        content="Privacy Policy for Myhren AI. How we collect, use, and protect your personal information."
+    />
 </svelte:head>
 
 <section class="legal-page">
