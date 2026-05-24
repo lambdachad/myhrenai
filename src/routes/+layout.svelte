@@ -222,6 +222,12 @@
         padding: 8px 0;
     }
 
+    .mobile-menu :global(.btn-primary) {
+        justify-content: center;
+        text-align: center;
+        margin-top: 4px;
+    }
+
     .footer {
         background: var(--c-dark);
         color: var(--c-white);
