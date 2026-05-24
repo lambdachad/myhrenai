@@ -26,7 +26,7 @@
 
 <nav class="nav">
     <div class="nav-inner container">
-        <a href="/" class="nav-logo"
+        <a href="/" class="nav-logo" aria-label="Myhren AI"
             ><enhanced:img
                 src="$lib/assets/logo.png"
                 alt="Myhren AI"
