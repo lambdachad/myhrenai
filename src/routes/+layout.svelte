@@ -17,12 +17,11 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="theme-color" content="#217ff1" />
     <meta name="robots" content="index, follow" />
-    <img
-        src="https://umami.myhren.ai/p/T5yST9fhE"
-        width="1"
-        height="1"
-        style="display:none;"
-    />
+    <script
+        defer
+        src="https://umami.myhren.ai/script.js"
+        data-website-id="18674c6c-e377-4282-a453-e62b16cb1170"
+    ></script>
 </svelte:head>
 
 <nav class="nav">
