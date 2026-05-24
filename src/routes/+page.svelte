@@ -75,65 +75,6 @@
     ];
 </script>
 
-<svelte:head>
-    <title>Myhren AI | AI Systems & Automation for Businesses</title>
-    <meta
-        name="description"
-        content="We build AI systems and automations that eliminate manual busywork. Workflow automation, AI agents, system integration, and process consulting for businesses."
-    />
-    <link rel="canonical" href="https://myhren.ai" />
-
-    <meta
-        property="og:title"
-        content="Myhren AI | AI Systems & Automation for Businesses"
-    />
-    <meta
-        property="og:description"
-        content="We build AI systems and automations that eliminate manual busywork. Workflow automation, AI agents, system integration, and process consulting for businesses."
-    />
-    <meta property="og:url" content="https://myhren.ai" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Myhren AI" />
-    <meta property="og:image" content="https://myhren.ai/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-        name="twitter:title"
-        content="Myhren AI | AI Systems & Automation for Businesses"
-    />
-    <meta
-        name="twitter:description"
-        content="We build AI systems and automations that eliminate manual busywork. Workflow automation, AI agents, and process consulting."
-    />
-    <meta name="twitter:image" content="https://myhren.ai/og-image.png" />
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Myhren AI",
-        "url": "https://myhren.ai",
-        "logo": "https://myhren.ai/logo.png",
-        "description": "We build AI systems and automations that eliminate manual busywork so your team stops wasting time on tasks that don't grow the business.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "NO"
-        },
-        "email": "contact@myhren.ai",
-        "sameAs": [],
-        "serviceType": [
-            "Workflow Automation",
-            "AI Agents",
-            "System Integration",
-            "Process Consulting"
-        ]
-    }
-    </script>
-</svelte:head>
-
 <section class="section-hero">
     <div class="container">
         <div class="hero-tag">

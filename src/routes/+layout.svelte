@@ -16,15 +16,13 @@
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="theme-color" content="#217ff1" />
-    <meta property="og:site_name" content="Myhren AI" />
-    <meta property="og:locale" content="en_US" />
     <meta name="robots" content="index, follow" />
 </svelte:head>
 
 <nav class="nav">
     <div class="nav-inner container">
         <a href="/" class="nav-logo"
-            ><img src="/logo.png" alt="Myhren AI" class="nav-logo-img" /></a
+            ><enhanced:img src="$lib/assets/logo.png" alt="Myhren AI" class="nav-logo-img" /></a
         >
 
         <div class="nav-links desktop-only">
@@ -91,13 +89,15 @@
     {/if}
 </nav>
 
-{@render children()}
+<main>
+    {@render children()}
+</main>
 
 <footer class="footer">
     <div class="container">
         <div class="footer-grid footer-top">
             <div class="footer-brand">
-                <img src="/logo.png" alt="Myhren AI" class="footer-logo-img" />
+                <enhanced:img src="$lib/assets/logo.png" alt="Myhren AI" class="footer-logo-img" />
                 <p class="footer-tagline">
                     AI systems and automations for businesses. Built to
                     eliminate the work you hate.

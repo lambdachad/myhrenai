@@ -5,6 +5,7 @@
     "npm:@fontsource-variable/inter@^5.2.8": "5.2.8",
     "npm:@fontsource-variable/jetbrains-mono@^5.2.8": "5.2.8",
     "npm:@sveltejs/adapter-cloudflare@^7.2.8": "7.2.8_@sveltejs+kit@2.61.0__@sveltejs+vite-plugin-svelte@7.1.2___svelte@5.55.9___vite@8.0.14__svelte@5.55.9__typescript@6.0.3__vite@8.0.14_wrangler@4.94.0__@cloudflare+workers-types@4.20260523.1_@sveltejs+vite-plugin-svelte@7.1.2__svelte@5.55.9__vite@8.0.14_svelte@5.55.9_typescript@6.0.3_vite@8.0.14",
+    "npm:@sveltejs/enhanced-img@~0.10.4": "0.10.4_@sveltejs+vite-plugin-svelte@7.1.2__svelte@5.55.9__vite@8.0.14_svelte@5.55.9_vite@8.0.14",
     "npm:@sveltejs/kit@^2.57.0": "2.61.0_@sveltejs+vite-plugin-svelte@7.1.2__svelte@5.55.9__vite@8.0.14_svelte@5.55.9_typescript@6.0.3_vite@8.0.14",
     "npm:@sveltejs/vite-plugin-svelte@7": "7.1.2_svelte@5.55.9_vite@8.0.14",
     "npm:resend@^6.12.3": "6.12.3",
@@ -546,6 +547,14 @@
     "@rolldown/pluginutils@1.0.1": {
       "integrity": "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw=="
     },
+    "@rollup/pluginutils@5.3.0": {
+      "integrity": "sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==",
+      "dependencies": [
+        "@types/estree",
+        "estree-walker@2.0.2",
+        "picomatch@4.0.4"
+      ]
+    },
     "@sindresorhus/is@7.2.0": {
       "integrity": "sha512-P1Cz1dWaFfR4IR+U13mqqiGsLFf1KbayybWwdd2vfctdV6hDpUkgCY0nKOLLTMSoRd/jJNjtbqzf13K8DCCXQw=="
     },
@@ -571,6 +580,19 @@
         "@sveltejs/kit",
         "worktop",
         "wrangler"
+      ]
+    },
+    "@sveltejs/enhanced-img@0.10.4_@sveltejs+vite-plugin-svelte@7.1.2__svelte@5.55.9__vite@8.0.14_svelte@5.55.9_vite@8.0.14": {
+      "integrity": "sha512-Am5nmAKUo7Nboqq7Dhtfn7dcXA087d7gIz6Vecn1opB41aJ680+0q9U9KvEcMgduOyeiwckTIOQOx4Mmq9GcvA==",
+      "dependencies": [
+        "@sveltejs/vite-plugin-svelte",
+        "magic-string",
+        "sharp",
+        "svelte",
+        "svelte-parse-markup",
+        "vite",
+        "vite-imagetools",
+        "zimmerframe"
       ]
     },
     "@sveltejs/kit@2.61.0_@sveltejs+vite-plugin-svelte@7.1.2__svelte@5.55.9__vite@8.0.14_svelte@5.55.9_typescript@6.0.3_vite@8.0.14": {
@@ -722,6 +744,9 @@
         "@jridgewell/sourcemap-codec"
       ]
     },
+    "estree-walker@2.0.2": {
+      "integrity": "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w=="
+    },
     "estree-walker@3.0.3": {
       "integrity": "sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==",
       "dependencies": [
@@ -790,6 +815,9 @@
       "dependencies": [
         "is-glob"
       ]
+    },
+    "imagetools-core@9.1.0": {
+      "integrity": "sha512-xQjs+2vrxLnAjCq+omuNkd5UQTld9/bP8+YT0LyYTlKfuSQtgUBvqhUwGugzSAh6sCdN+LnROMuLswn5hZ9Fhg=="
     },
     "is-extglob@2.1.1": {
       "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ=="
@@ -892,7 +920,7 @@
     "magic-regexp@0.10.0": {
       "integrity": "sha512-Uly1Bu4lO1hwHUW0CQeSWuRtzCMNO00CmXtS8N6fyvB3B979GOEEeAkiTUDsmbYLAbvpUS/Kt5c4ibosAzVyVg==",
       "dependencies": [
-        "estree-walker",
+        "estree-walker@3.0.3",
         "magic-string",
         "mlly",
         "regexp-tree",
@@ -1148,6 +1176,12 @@
       ],
       "bin": true
     },
+    "svelte-parse-markup@0.1.5_svelte@5.55.9": {
+      "integrity": "sha512-T6mqZrySltPCDwfKXWQ6zehipVLk4GWfH1zCMGgRtLlOIFPuw58ZxVYxVvotMJgJaurKi1i14viB2GIRKXeJTQ==",
+      "dependencies": [
+        "svelte"
+      ]
+    },
     "svelte@5.55.9": {
       "integrity": "sha512-fTjjT8cHLDwigcu2j3pv7Jq04LklXevPB8uBgyHNiTXv+RMNvVnrjS4UEYrLMkhuq1vpCodHjiW+z/95SDs/fg==",
       "dependencies": [
@@ -1243,6 +1277,14 @@
         "@jridgewell/remapping",
         "picomatch@4.0.4",
         "webpack-virtual-modules"
+      ]
+    },
+    "vite-imagetools@9.0.3": {
+      "integrity": "sha512-FwjApRNZyN+RucPW9Z9kf0dyzyi3r3zlDfrTnzHXNaYpmT3pZ5w//d6QkApy1iypbDm+3fq+Gwfv+PYA4j4uYw==",
+      "dependencies": [
+        "@rollup/pluginutils",
+        "imagetools-core",
+        "sharp"
       ]
     },
     "vite@8.0.14": {
@@ -1343,6 +1385,7 @@
         "npm:@fontsource-variable/inter@^5.2.8",
         "npm:@fontsource-variable/jetbrains-mono@^5.2.8",
         "npm:@sveltejs/adapter-cloudflare@^7.2.8",
+        "npm:@sveltejs/enhanced-img@~0.10.4",
         "npm:@sveltejs/kit@^2.57.0",
         "npm:@sveltejs/vite-plugin-svelte@7",
         "npm:resend@^6.12.3",
