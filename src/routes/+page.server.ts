@@ -9,12 +9,18 @@ export const actions = {
         // Get form data and check if valid
         const formData = await request.formData();
         const { firstName, lastName, email, company, message } =
-            Object.fromEntries(formData);
+            Object.fromEntries(formData) as {
+                firstName: string;
+                lastName: string;
+                email: string;
+                company: string;
+                message: string;
+            };
         if (
-            !firstName?.trim() ||
-            !lastName?.trim() ||
-            !email?.trim() ||
-            !company?.trim()
+            !firstName.trim() ||
+            !lastName.trim() ||
+            !email.trim() ||
+            !company.trim()
         ) {
             return fail(400, { error: "Please fill in all required fields." });
         }
@@ -22,15 +28,15 @@ export const actions = {
         // Send email to Myhren AI
         await resend.emails.send({
             from: "Myhren AI <noreply@myhren.ai>",
-            to: "contact@myhren.ai",
+            to: "oddharald@myhren.ai",
             replyTo: email,
             subject: `New inquiry from ${firstName} ${lastName} at ${company}`,
-            text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message?.trim() || "(no message)"}`,
+            text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\n\n${message.trim()}`,
         });
 
         // Send email to the user
         await resend.emails.send({
-            from: "Myhren AI <noreply@myhren.ai>",
+            from: "Myhren AI <contact@myhren.ai>",
             to: email,
             subject: "We got your message",
             text: `Hi ${firstName},\n\nThanks for reaching out. We received your message and will get back to you within a few hours.\n\nIf you want to skip the back-and-forth, you can book a call directly:\nhttps://cal.com/myhrenai/strategy-call\n\nTalk soon,\nOdd-Harald Myhren\nMyhren AI`,
