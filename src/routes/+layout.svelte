@@ -15,7 +15,7 @@
 <svelte:head>
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta name="theme-color" content="#217ff1" />
+    <meta name="theme-color" content="#1b8a4a" />
     <meta name="robots" content="index, follow" />
     <script
         defer
