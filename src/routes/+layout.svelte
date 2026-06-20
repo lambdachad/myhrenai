@@ -17,11 +17,7 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="theme-color" content="#1b8a4a" />
     <meta name="robots" content="index, follow" />
-    <script
-        defer
-        src="https://umami.myhren.ai/script.js"
-        data-website-id="18674c6c-e377-4282-a453-e62b16cb1170"
-    ></script>
+
 </svelte:head>
 
 <nav class="nav">
